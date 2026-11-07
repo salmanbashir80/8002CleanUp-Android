@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>8002CleanUp · Licence generator</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <main>
+    <header><span class="brand">8002<span>CleanUp</span></span><span class="badge">OWNER TOOL</span></header>
+    <h1>Issue a Pro licence.</h1>
+    <p class="intro">Open this page in Chrome. No ZIP download or app installation is needed.</p>
+    <section class="panel" aria-labelledby="access-title">
+      <div class="section-heading"><h2 id="access-title">1. Unlock owner access</h2><span id="lock-state" class="state">Locked</span></div>
+      <p>Paste the private owner unlock code provided in your chat. Your signing key is decrypted inside this browser and stays here until you lock the tool.</p>
+      <form id="unlock-form">
+        <label for="unlock-code">Owner unlock code</label>
+        <input id="unlock-code" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" required placeholder="Paste your owner unlock code">
+        <button id="unlock" type="submit">Unlock generator</button>
+      </form>
+      <button id="lock" class="secondary" type="button" hidden>Lock generator</button>
+      <p id="unlock-message" class="feedback" role="status" aria-live="polite"></p>
+    </section>
+    <section class="panel" aria-labelledby="licence-title">
+      <h2 id="licence-title">2. Create a licence</h2>
+      <p>In the Android app, open <strong>Settings → Licence &amp; trial → Copy device code</strong>.</p>
+      <form id="licence-form">
+        <fieldset id="licence-fields" disabled>
+          <label for="customer">Customer / licence name</label>
+          <input id="customer" maxlength="100" required autocomplete="off" placeholder="e.g. Salman Bashir">
+          <label for="device">Device code from the app</label>
+          <input id="device" minlength="20" maxlength="20" required autocapitalize="characters" spellcheck="false" autocomplete="off" placeholder="20 letters and numbers">
+          <details><summary>Advanced: licence for any device</summary><label class="check"><input id="unbound" type="checkbox"><span>Allow this licence on any device. Anyone with the resulting licence can activate it.</span></label></details>
+          <label for="days">Valid for</label>
+          <select id="days"><option value="0">Lifetime</option><option value="30">30 days</option><option value="365">365 days</option></select>
+          <button id="generate" type="submit">Generate Pro licence</button>
+        </fieldset>
+      </form>
+      <p id="generation-message" class="feedback" role="status" aria-live="polite"></p>
+    </section>
+    <section id="result-panel" class="panel" aria-labelledby="result-title" hidden>
+      <h2 id="result-title">3. Activate in the app</h2>
+      <p>Copy this entire key into <strong>Settings → Licence &amp; trial → Activate licence</strong>.</p>
+      <label for="activation-key">Signed activation key</label>
+      <textarea id="activation-key" rows="6" readonly spellcheck="false"></textarea>
+      <p id="licence-summary" class="note"></p>
+      <div class="actions"><button id="copy" type="button">Copy licence key</button><button id="download" class="secondary" type="button">Save .txt</button></div>
+      <p id="copy-message" class="feedback" role="status" aria-live="polite"></p>
+    </section>
+    <footer>Keep your owner unlock code private. Customers receive only their activation key. The code and decrypted signing key are never sent to a server or saved in browser storage. The tool locks after 10 minutes of inactivity. A Pro licence does not include AI provider credits.</footer>
+  </main>
+</body>
+</html>
