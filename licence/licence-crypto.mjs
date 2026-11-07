@@ -2,15 +2,13 @@ const encoder = new TextEncoder();
 export const APP_ID = 'com.salmanbashir.cleanup8002';
 export const ITERATIONS = 600000;
 export const PUBLIC_KEY_PEM = `-----BEGIN PUBLIC KEY-----
-MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEA2qiY3YUa+KIOuIvzuzhr
-dsAG3bcfb/sEYHWcmD20IDmOtcwCnNGca4zH8Hl8VOc1YEj8Xo9q2IsCV5jHnUGZ
-h299pJiSOLAYsfhTuVhm7J+UZ6Oruv9na38JwnuVcfAi3s6taOgSXm1EZi3H1ndf
-1U3shea357AaNnXjEcKtXy2yzCV7C04TwD+t54NohxZ1L18CN5wrlbNfhNpDALhd
-SJo4dzb6Zc3VUysrqqKrQ5BVRJRg8lTWqg0bnODXCp7h0kQF03Ywp4xjYSe9luB9
-AujgHfo/E9toT/Qz6WTZ8veP5YLukd+NwuEVKfCIBCqagoFUtUEIBoxuNP8TU2TV
-u0hxRF+KIMgs++tpfIqv20ryCcZ0JVphM4uoREHPgmAUOBnAjQT7D/lB6N5t8nJU
-fE84AaIQ/MxdYFxoPyaO6HIbux8IDobPxYcvKkfF/kCwhdn6zAXO9KoQhIgIXv4B
-f7gAaCYpb52lY4xWg/WDiL5HGtviAbTWTk3CPzx84d7DAgMBAAE=
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuRlk9kq6G8W2HO4rs11Y
++0mX7xG5OSlb8zsF4MCrt4f89kYws3CSph11LAmIbN7oZv83ugVIeNi/oTJdYzTo
+p+Nq7KWZr2w2d7lR4zlyNaZyXv11QwCgPYn+2AENwKTJr7c85DY5gcuIbUVAhulY
+whhwOcwaWxfZH2CnBUWVGOuDq66vsPoLmsAEucqsIUC7l+57sJDWIk2crWmgi61u
+S+HLTw8h91PqtGMzpIAWhw8Xm4HajggPW6dDhof7FgUot9XJ2YDMQanrnfaZDl2F
+DkEMWiAFdxyeHfWA+tHhDnsbARY2/A3cFw3V72LADkyTFkQ0vaw7viQkSf0NbXRk
+fQIDAQAB
 -----END PUBLIC KEY-----`;
 const algorithm = { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' };
 export const encode64 = bytes => btoa(String.fromCharCode(...new Uint8Array(bytes))).replaceAll('+', '-').replaceAll('/', '_').replaceAll('=', '');
